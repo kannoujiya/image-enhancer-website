@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Enhancer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Image Enhancer</h1>
+    <p>Upload a low-resolution or black-and-white image and enhance it to your desired resolution or colorize it!</p>
+    <form id="uploadForm">
+      <input type="file" id="imageInput" accept="image/*" required>
+      <select id="resolution">
+        <option value="720">720p</option>
+        <option value="1280">1280p</option>
+        <option value="1920">1920p</option>
+        <option value="3840">4K</option>
+        <option value="7680">8K</option>
+      </select>
+      <label>
+        <input type="checkbox" id="colorize"> Colorize Black & White Image
+      </label>
+      <button type="submit">Enhance Image</button>
+    </form>
+    <div id="result">
+      <img id="enhancedImage" src="" alt="Enhanced Image">
+      <a id="downloadLink" href="#" download>Download Enhanced Image</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
