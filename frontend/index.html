@@ -8,25 +8,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="hero">
+    <h1>Enhance Your Images with AI</h1>
+    <p>Upscale, sharpen, colorize, and enhance your images in seconds!</p>
+  </div>
   <div class="container">
-    <h1>Image Enhancer</h1>
-    <p>Upload a low-resolution or black-and-white image and enhance it to your desired resolution or colorize it!</p>
-    <form id="uploadForm">
-      <input type="file" id="imageInput" accept="image/*" required>
+    <div class="upload-section">
+      <div class="dropzone" id="dropzone">
+        <p>Drag & drop images here or click to upload</p>
+        <input type="file" id="imageInput" accept="image/*" multiple>
+      </div>
+    </div>
+    <div class="enhancement-options">
+      <label for="resolution">Resolution:</label>
       <select id="resolution">
         <option value="720">720p</option>
         <option value="1280">1280p</option>
         <option value="1920">1920p</option>
-        <option value="3840">4K</option>
-        <option value="7680">8K</option>
+        <option value="3840" disabled>4K (Unlock with 100 points)</option>
+        <option value="7680" disabled>8K (Unlock with 200 points)</option>
       </select>
+      <label for="sharpness">Sharpness:</label>
+      <input type="range" id="sharpness" min="0" max="100" value="50">
       <label>
-        <input type="checkbox" id="colorize"> Colorize Black & White Image
+        <input type="checkbox" id="colorize"> Colorize Black & White
       </label>
-      <button type="submit">Enhance Image</button>
-    </form>
-    <div id="result">
-      <img id="enhancedImage" src="" alt="Enhanced Image">
+      <button id="enhanceButton">Enhance Images</button>
+    </div>
+    <div class="offerwall">
+      <p>Unlock premium features by completing offers!</p>
+      <button id="openOfferwall">Earn Points</button>
+      <p>Your Points: <span id="points">0</span></p>
+    </div>
+    <div class="preview-section">
+      <div class="original">
+        <h3>Original</h3>
+        <img id="originalImage" src="" alt="Original Image">
+      </div>
+      <div class="enhanced">
+        <h3>Enhanced</h3>
+        <img id="enhancedImage" src="" alt="Enhanced Image">
+      </div>
+    </div>
+    <div class="download-section">
       <a id="downloadLink" href="#" download>Download Enhanced Image</a>
     </div>
   </div>
